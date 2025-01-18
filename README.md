@@ -88,3 +88,8 @@ Access the application in your browser at http://localhost:3000.
  - **pages/:** Includes Next.js pages such as index.tsx.
  - **routes/:** API route handlers for health checks and search requests.
  - **public/:** Public assets like icons and images.
+
+# Notes
+
+ - Ensure the backend is running before starting the frontend.
+ - Use valid URLs and queries for best results.
