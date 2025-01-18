@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Website Content Search with Next.js
 
-First, run the development server:
+This project is a web-based application for searching specific content on websites. It features a Next.js frontend that communicates with a FastAPI backend to fetch and process search results.
 
+# Features
+
+ - Search Functionality: Input a URL and query to search specific content on websites.
+ - User-Friendly Interface: Modern and responsive design for a seamless experience.
+ - Real-time Feedback: Displays results with match percentages and contextual highlights.
+ - Error Handling: Notifies users about invalid inputs or backend issues.
+ - Backend Integration: Communicates seamlessly with a FastAPI backend.
+
+ # Prerequisites
+
+Ensure the following are installed on your system:
+
+ - Node.js: Version 16.x or higher [(Node.js Download)](https://nodejs.org/en).
+ - npm or yarn: Comes with Node.js.
+ - FastAPI Backend: Set up and run the FastAPI backend at http://localhost:8000.
+
+
+# Setup
+
+1. Clone this repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/Midhun-live/Websense-Search-client.git
+  cd Websense-Search-client
+```
+2. Install the dependencies:
+Install the required packages using npm or yarn:
+```bash
+  # Using npm
+  npm install
+
+  # Or using yarn
+  yarn install
+```
+3. Configure Environment Variables
+```bash
+  # .env.local
+  NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
+```
+4. Run the Development Server:
+Start the Next.js development server:
+```bash
+  # Using npm
+  npm run dev
+
+  # Or using yarn
+  yarn dev
+```
+Access the application in your browser at http://localhost:3000.
+
+
+# API Routes
+ 
+ 1. Health Check
+
+ - ROUTE /api/health
+
+ - Description: Verifies if the backend service is running.
+
+ Response:
+ ```bash
+  {
+    "status": "ok"
+  }
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ 2. Search
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ - ROUTE /api/search
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+ - Description: Sends a URL and query to the backend and fetches matching results.
 
-## Learn More
+ Request Body::
+ ```bash
+  {
+    "url": "https://example.com",
+    "query": "your search query"
+  }
+```
 
-To learn more about Next.js, take a look at the following resources:
+# Project Structure:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ - **components/:** Contains reusable UI components like the search interface.
+ - **pages/:** Includes Next.js pages such as index.tsx.
+ - **routes/:** API route handlers for health checks and search requests.
+ - **public/:** Public assets like icons and images.
