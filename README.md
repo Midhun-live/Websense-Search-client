@@ -93,3 +93,6 @@ Access the application in your browser at http://localhost:3000.
 
  - Ensure the backend is running before starting the frontend.
  - Use valid URLs and queries for best results.
+
+# Screenshot
+<img width="1440" alt="Screenshot 2025-01-18 at 2 59 56 PM" src="https://github.com/user-attachments/assets/e05c8963-5ed1-4e36-9e7e-3a2e1785a75f" />
